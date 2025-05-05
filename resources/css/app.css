@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+mark {
+    background-color: #23ec59;
+    color: black;
+    padding: 0 2px;
+    border-radius: 2px;
+}
