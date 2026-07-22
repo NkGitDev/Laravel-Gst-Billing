@@ -6,6 +6,9 @@ use App\Http\Controllers\PartyController;
 use App\Http\Controllers\GstBillController;
 use App\Http\Controllers\VendorInvoiceController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AIInsightController;
+
+Route::get('/generate-ai-insight', [AIInsightController::class, 'generateInsight'])->name('ai.insight');
 
 
 // Party Routes

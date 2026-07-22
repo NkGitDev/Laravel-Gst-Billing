@@ -157,6 +157,53 @@
     @endif
 </div>
 
+
+
+
+<!-- AI Insight Section -->
+<div class="card my-4 border-primary">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">✨ Smart AI Sales Insights</h5>
+        <button id="aiBtn" onclick="fetchAIInsight()" class="btn btn-light btn-sm">Generate AI Insights</button>
+    </div>
+    <div class="card-body">
+        <div id="aiLoading" style="display: none;" class="text-muted">
+            <em>🤖 Analyzing sales & invoice data with AI... Please wait...</em>
+        </div>
+        <div id="aiResult" class="card-text">
+            Click the button above to get smart recommendations for your business!
+        </div>
+    </div>
+</div>
+
+<script>
+function fetchAIInsight() {
+    document.getElementById('aiLoading').style.display = 'block';
+    document.getElementById('aiResult').innerHTML = '';
+    
+    fetch("{{ route('ai.insight') }}")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('aiLoading').style.display = 'none';
+            if(data.success) {
+                document.getElementById('aiResult').innerText = data.insight;
+            } else {
+                // Yahan exact message display hoga
+                document.getElementById('aiResult').innerText = 'Error: ' + data.message;
+            }
+        })
+        .catch(error => {
+            document.getElementById('aiLoading').style.display = 'none';
+            document.getElementById('aiResult').innerText = 'Error connecting to server: ' + error;
+        });
+}
+</script>
+
+
+
+
+
+
 @include('include/login-popup')
 @include('include/register-popup')
 

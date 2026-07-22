@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Dashboard</title>
+    <title>{{ config('app.name') ?: 'Default Title' }}</title>
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- App favicon -->
+    <!-- App Icon -->
+    <link rel="icon" href="{{ asset('assets/images/Logo/GST_Logo.png') }}" type="image/x-icon">
+
     <link href="{{ asset('assets/css2/bootstrap-creative.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css2/app-creative.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css2/icons.min.css') }}" rel="stylesheet" type="text/css" />
