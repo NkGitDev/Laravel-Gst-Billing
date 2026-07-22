@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('vendor_invoices', function (Blueprint $table) {
             $table->id();
-            $table->integer("party_id")->nullable()->index();
-            $table->foreign('party_id')->references('id')->on('parties');
+            $table->foreignId('party_id')->nullable()->constrained('parties');
             $table->string("account_holder_name")->nullable();
             $table->string("account_number")->nullable();
             $table->date("invoice_date")->nullable();
