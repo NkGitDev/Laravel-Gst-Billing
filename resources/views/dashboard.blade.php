@@ -159,7 +159,6 @@
 
 
 
-
 <!-- AI Insight Section -->
 <div class="card my-4 border-primary">
     <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
@@ -181,7 +180,8 @@ function fetchAIInsight() {
     document.getElementById('aiLoading').style.display = 'block';
     document.getElementById('aiResult').innerHTML = '';
     
-    fetch("{{ route('ai.insight') }}")
+    // Relative path use kiya hai taaki HTTPS ka mixed content error na aaye
+    fetch('/generate-ai-insight')
         .then(response => response.json())
         .then(data => {
             document.getElementById('aiLoading').style.display = 'none';

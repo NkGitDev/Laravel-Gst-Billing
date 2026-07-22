@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\URL;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Live server (production) par hamesha HTTPS force karne ke liye
+        if (config('app.env') === 'production') {
+            URL::forceScheme('https');
+        }
+
         // Share the authenticated user with all views
         View::composer('*', function ($view) {
             $view->with('user', Auth::user());
