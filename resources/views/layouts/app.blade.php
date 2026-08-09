@@ -11,7 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App Icon -->
-    <link rel="icon" href="{{ asset('assets/images/Logo/GST_Logo.png') }}" type="image/x-icon">
+    <!-- <link rel="icon" href="{{ asset('assets/images/Logo/GST_Logo.png') }}" type="image/x-icon"> -->
+
+    <link rel="icon" href="{{ url('assets/images/Logo/GST_Logo.png') }}">
 
     <link href="{{ asset('assets/css2/bootstrap-creative.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css2/app-creative.min.css') }}" rel="stylesheet" type="text/css" />
