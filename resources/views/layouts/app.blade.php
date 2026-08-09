@@ -12,8 +12,7 @@
 
     <!-- App Icon -->
     <!-- <link rel="icon" href="{{ asset('assets/images/Logo/GST_Logo.png') }}" type="image/x-icon"> -->
-
-    <link rel="icon" href="{{ url('assets/images/Logo/GST_Logo.png') }}">
+    <link rel="icon" href="https://ai-gst-billing.vercel.app/assets/images/Logo/GST_Logo.png" type="image/x-icon">
 
     <link href="{{ asset('assets/css2/bootstrap-creative.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css2/app-creative.min.css') }}" rel="stylesheet" type="text/css" />
