@@ -59,7 +59,7 @@
                             @if(Auth::check())
                                 <a href="{{ route('user-profile.edit', $user->id) }}" class="dropdown-item notify-item">
                                     <i class="fe-user"></i>
-                                    <span>My Account</ span>
+                                    <span>My Account</span>
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a href="{{ route('logout') }}"
@@ -88,10 +88,10 @@
                 <div class="logo-box">
                     <a href="index.html" class="logo logo-dark text-center">
                         <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="" height="22" />
+                            <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22" />
                         </span>
                         <span class="logo-lg">
-                            <img src="assets/images/logo-dark.png" alt="" height="20" />
+                            <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="20" />
                         </span>
                     </a>
                 </div>
@@ -125,4 +125,4 @@
 
     @livewireScripts
 </body>
-</html> 
+</html>
